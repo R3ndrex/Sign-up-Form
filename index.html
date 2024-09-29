@@ -4,17 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./style.css" />
+        <script defer src="./script.js"></script>
         <title>Sign up Form</title>
     </head>
     <body>
-        <div class="image-container">
+        <header class="image-container">
             <img
+                class="bg-image"
                 src="./images/halie-west-25xggax4bSA-unsplash.jpg"
                 alt="green leaf plant in close up photography"
             />
             <span class="logo-section">
-                <img src="./images/odin-lined.png" alt="Odin Logo" />Odin
-                Project</span
+                <img src="./images/odin-lined.png" alt="Odin Logo" />Sign
+                In</span
             >
             <span class="photo-author"
                 >Photo by
@@ -28,6 +30,100 @@
                     >Unsplash</a
                 >
             </span>
-        </div>
+        </header>
+        <main>
+            <form
+                action="https://httpbin.org/post"
+                id="registration_form"
+                method="post"
+            >
+                <h1>
+                    This is not a real online service! You know you need
+                    somehing like this in your life to help you realize your
+                    deepest dreams. Sign up now to get started.
+                </h1>
+                <div class="input-container">
+                    <p>
+                        <label for="user_name"
+                            ><span>Name</span
+                            ><span aria-label="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            name="name"
+                            id="user_name"
+                            autocomplete="name"
+                            required
+                        />
+                        <span></span>
+                    </p>
+                    <p>
+                        <label for="user_last">Last Name</label>
+                        <input
+                            type="text"
+                            name="Last name"
+                            id="user_last"
+                            autocomplete="additional-name"
+                        />
+                    </p>
+                </div>
+                <div class="input-container">
+                    <p>
+                        <label for="user_email"
+                            ><span>Email</span
+                            ><span aria-label="required">*</span></label
+                        >
+                        <input
+                            type="email"
+                            name="email"
+                            id="user_email"
+                            autocomplete="email"
+                            required
+                        /><span></span>
+                    </p>
+                    <p>
+                        <label for="phone">Phone number</label>
+                        <input type="tel" name="phone number" id="phone" />
+                    </p>
+                </div>
+                <div class="pass-container">
+                    <p>
+                        <label for="pass"
+                            ><span>Password</span>
+                            <span aria-label="required">*</span></label
+                        >
+                        <input
+                            type="password"
+                            name="password"
+                            id="pass"
+                            autocomplete="new-password"
+                            required
+                        /><span></span>
+                    </p>
+                    <p>
+                        <label for="confirm_pass">
+                            <span> Confirm password</span>
+                            <span aria-label="required">*</span>
+                        </label>
+                        <input
+                            type="password"
+                            name="Confirm password"
+                            id="confirm_pass"
+                            autocomplete="current-password"
+                            required
+                        /><span></span>
+                    </p>
+                </div>
+            </form>
+            <div class="submit">
+                <button type="submit" form="registration_form">
+                    Create acount
+                </button>
+                <p class="submit-text">
+                    Already have an accound?
+                    <a href="#"> Log in</a>
+                </p>
+            </div>
+        </main>
     </body>
 </html>
