@@ -1,3 +1,21 @@
+@font-face {
+    font-display: swap;
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/roboto-slab/roboto-slab-v34-latin-regular.woff2")
+            format("woff2"),
+        url("./fonts/roboto-slab/roboto-slab-v34-latin-regular.ttf")
+            format("truetype");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/ubuntu/ubuntu-v20-latin-regular.woff2") format("woff2"),
+        url("./fonts/ubuntu/ubuntu-v20-latin-regular.ttf") format("truetype");
+}
 *,
 *::after,
 *::before {
@@ -14,7 +32,9 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: var(--dark-green);
+    background-color: var(--light-green);
+    display: flex;
+    font-family: Roboto Slab, sans-serif;
 }
 .image-container {
     padding: 0;
@@ -24,7 +44,17 @@ body {
     display: flex;
     width: 40%;
 }
-img {
+.bg-image {
+    position: relative;
+    width: 100%;
+}
+.image-container::after {
+    box-shadow: inset 0px -147px 78px -32px rgba(0, 0, 0, 0.75);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
     width: 100%;
 }
 .logo-section {
@@ -34,27 +64,122 @@ img {
     font-size: 5rem;
     position: absolute;
     width: 100%;
-    color: var(--green);
+    color: var(--light-yellow);
     top: 20%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
 }
 span > img {
     height: 3ch;
-    width: 3ch;
+    width: 2.5ch;
 }
 .photo-author {
+    z-index: 1;
     text-align: center;
     width: 100%;
     padding: 1rem;
+    border: none;
     position: absolute;
     align-self: flex-end;
     height: fit-content;
-    font-size: 2rem;
     color: var(--light-yellow);
 }
-a:link,
-a:visited {
+header a:link,
+header a:visited {
     color: var(--light-green);
     text-decoration: none;
+}
+
+main {
+    position: relative;
+    width: 60%;
+    margin: 0;
+    color: var(--light-green);
+}
+form {
+    background-color: var(--dark-green);
+    position: relative;
+    top: 20%;
+    padding: 0 5rem 2rem 5rem;
+}
+p,
+button {
+    font-family: Ubuntu, sans-serif;
+}
+label,
+input,
+legend {
+    font-size: 1.2rem;
+}
+h1 {
+    margin: 0;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    text-wrap: balance;
+    color: var(--green);
+}
+.input-container,
+.pass-container {
+    display: flex;
+    gap: 5rem;
+}
+input {
+    border-radius: 1rem;
+    width: 30ch;
+    height: 3ch;
+    padding: 1rem;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+}
+label {
+    text-transform: uppercase;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+p {
+    display: flex;
+    flex-direction: column;
+}
+.submit {
+    position: relative;
+    color: black;
+    top: 25%;
+    margin: 0rem 5rem;
+}
+button {
+    padding: 1rem 2rem;
+    background-color: var(--green);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+button:hover {
+    background-color: #596d48;
+}
+.submit-text {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-size: 1.5rem;
+}
+.submit > p > a:link,
+.submit > p > a:visited {
+    font-weight: 1000;
+    color: var(--dark-green);
+    text-decoration: none;
+}
+input ~ span {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    height: 2ch;
+    width: 30ch;
+    color: red;
+    font-weight: 500;
+}
+input:user-invalid ~ span::after {
+    content: "This field is required";
+}
+.pass-container :user-invalid ~ span::after {
+    content: "This field is required, passwords must match";
+}
+input:focus {
+    outline-color: rgb(79, 79, 255);
 }
