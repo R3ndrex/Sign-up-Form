@@ -4,7 +4,7 @@ Simple form with client-side validation
 
 ## Screenshot
 
-![Page](https://i.imgur.com/S6DcwRr.jpeg?raw=true)
+![Page](https://i.imgur.com/3p13rkl.jpeg?raw=true)
 
 ## Source
 
