@@ -177,9 +177,6 @@ input ~ span {
 input:user-invalid ~ span::after {
     content: "This field is required";
 }
-.pass-container :user-invalid ~ span::after {
-    content: "This field is required, passwords must match";
-}
 input:focus {
     outline-color: rgb(79, 79, 255);
 }
